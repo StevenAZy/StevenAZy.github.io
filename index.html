@@ -1,98 +1,1092 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>StevenAZy</title><meta name="description" content="Stay hungry Stay foolish"><meta name="keywords"><meta name="author" content="StevenAZy"><meta name="copyright" content="StevenAZy"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/logo.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="StevenAZy"><meta name="twitter:description" content="Stay hungry Stay foolish"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="StevenAZy"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="StevenAZy"><meta property="og:description" content="Stay hungry Stay foolish"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
-var t = Cookies.get("theme");
-if (autoChangeMode == '1'){
-const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-if (t === undefined){
-  if (isLightMode) activateLightMode()
-  else if (isDarkMode) activateDarkMode()
-  else if (isNotSpecified || hasNoSupport){
-    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-    now = new Date();
-    hour = now.getHours();
-    isNight = hour < 6 || hour >= 18
-    isNight ? activateDarkMode() : activateLightMode()
-}
-} else if (t == 'light') activateLightMode()
-else activateDarkMode()
+<!DOCTYPE html>
 
 
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
 
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://yoursite.com/"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg" as="image"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
-  highlight_copy: 'false',
-  highlight_lang: 'true',
-  highlight_shrink: 'false',
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  bookmark: {
-    title: 'Snackbar.bookmark.title',
-    message_prev: 'Press',
-    message_next: 'to bookmark this page'
-  },
-  runtime_unit: 'days',
-  copyright: undefined,
-  copy_copyright_js: false,
-  ClickShowText: undefined,
-  medium_zoom: 'false',
-  Snackbar: undefined
   
-}</script><meta name="generator" content="Hexo 4.1.1"></head><body><div id="header"> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">StevenAZy</a></span><i class="fa fa-bars fa-fw toggle-menu pull_right close" aria-hidden="true"></i><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lazyload avatar_img" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">3</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><div id="body-wrap"><nav class="full_page" id="nav"><div class="nav_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle">StevenAZy</span></div><div id="site-sub-title"><span class="subtitle"></span></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/StevenAZy" target="_blank"><i class="fa fa-github"></i></a><a class="social-icon" href="mailto:lichangyong04@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div></nav><div id="content-outer"><div class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item article-container"><div class="post_cover pull_left left_radius"><a href="/2020/01/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%88%E4%B8%80%EF%BC%89/" title="论文阅读（一）"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/01/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%88%E4%B8%80%EF%BC%89/" title="论文阅读（一）">论文阅读（一）</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-01-08</time><div class="content">Reverse active learning based atrous DenseNet for pathological image classificationAddresshttps://doi.org/10.1186/s12859-019-2979-y
-Challenges
-most pa ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_right right_radius"><a href="/2020/01/03/2019%E7%9A%84%E6%80%BB%E7%BB%93/" title="2019的总结"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/01/03/2019%E7%9A%84%E6%80%BB%E7%BB%93/" title="2019的总结">2019的总结</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-01-03</time><div class="content">对2019的总结本来是想放在元旦写的，但是最近忙着期末考试，今天刚考完一门比较慌的课，准备复习明天的英语的，但是不知道是不是莫名的自信，就是不想复习，就想着好久没有更新博客，就把2019的总结写了吧！其实2019的还有经历了挺多的，先是考研失利，自己也不想调剂，就开始找了工作，后来因为家里的原因，又 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_left left_radius"><a href="/2019/12/17/Latex-install/" title="Latex_install"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="/2019/12/17/Latex-install/" title="Latex_install">Latex_install</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-17</time><div class="content">之前就听人说LaTeX如何如何的好，甩word几条街…。博主不以未然，感觉Word挺不错的，但是在写毕业论文的时候，Word的排版以及公式的书写是真的很糟糕！于是就尝试了一下LaTex，果然没有人能逃过哲学家王竟泽的真香定律。当时只是简单的试用了一下，如今博主换了电脑，决定要配置一些必要的东西，安装 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_right right_radius"><a href="/2019/12/14/my-first-blog/" title="第一篇博客"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="/2019/12/14/my-first-blog/" title="第一篇博客">第一篇博客</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-14</time><div class="content">严格意义上来说，这是我自己的第一篇博客!本科的时候就在CSDN和简书上写过博客，之后自己也想弄一个属于自己的博客，开始自己设计前端，自己写后端，完全当成是一个网站来做，还特地租了一个域名和服务器。最后因为自己的经济原因，服务器和域名都租不起了，也就放弃了。其实，很大的原因还是自己不能做到很好的内容产 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card_widget card-author"><div class="card-content"><div class="post_data"><div class="data-item is_center"><img class="lazyload avatar_img" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"><p class="author-info__name is_center">StevenAZy</p><p class="author-info__description is_center">Stay hungry Stay foolish</p></div></div><div class="post_data data_config"><div class="data-item is_center"><div class="data_link"><a href="/archives/"><p class="headline">Articles</p><p class="length_num">4</p></a></div></div><div class="data-item is_center">      <div class="data_link"><a href="/tags/"><p class="headline">Tags</p><p class="length_num">3</p></a></div></div></div><div class="post_data is_center"><a class="data-item bookmark bookmarke--primary bookmark--animated" id="bookmark-it" href="javascript:;" title="Add to bookmark" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>Add to bookmark</span></a></div><div class="post_data data_config"><div id="aside-social-icons"> <a class="social-icon data-item" href="https://github.com/StevenAZy" target="_blank"><i class="fa fa-github"></i></a><a class="social-icon data-item" href="mailto:lichangyong04@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a><a class="social-icon data-item" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div></div></div><div class="card_widget card-announcement"><div class="card-content"><div class="item_headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>Announcement</span></div><div class="announcement_content">感謝訪問本站，若喜歡請收藏 ^_^</div></div></div><div class="card_widget card-recent-post"><div class="card-content"><div class="item_headline"><i class="fa fa-history" aria-hidden="true"></i><span>Recent Post</span></div><div class="aside_recent_item"><div class="aside_recent_post"><a href="/2020/01/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%88%E4%B8%80%EF%BC%89/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'" title="论文阅读（一）"></div><div id="aside_title"><div class="aside_post_title" href="/2020/01/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%88%E4%B8%80%EF%BC%89/" title="论文阅读（一）">论文阅读（一）</div><time class="aside_post_meta post-meta__date">2020-01-08</time></div></a></div><div class="aside_recent_post"><a href="/2020/01/03/2019%E7%9A%84%E6%80%BB%E7%BB%93/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'" title="2019的总结"></div><div id="aside_title"><div class="aside_post_title" href="/2020/01/03/2019%E7%9A%84%E6%80%BB%E7%BB%93/" title="2019的总结">2019的总结</div><time class="aside_post_meta post-meta__date">2020-01-03</time></div></a></div><div class="aside_recent_post"><a href="/2019/12/17/Latex-install/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'" title="Latex_install"></div><div id="aside_title"><div class="aside_post_title" href="/2019/12/17/Latex-install/" title="Latex_install">Latex_install</div><time class="aside_post_meta post-meta__date">2019-12-17</time></div></a></div><div class="aside_recent_post"><a href="/2019/12/14/my-first-blog/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'" title="第一篇博客"></div><div id="aside_title"><div class="aside_post_title" href="/2019/12/14/my-first-blog/" title="第一篇博客">第一篇博客</div><time class="aside_post_meta post-meta__date">2019-12-14</time></div></a></div></div></div></div><div class="card_widget card-tags"><div class="card-content"><div class="item_headline"><i class="fa fa-tags" aria-hidden="true"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 16px; color: #999">教程</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 16px; color: #999">论文</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 24px; color: #000">随笔</a></div></div></div><div class="card_widget card-archives"><div class="card-content"><div class="item_headline"><i class="fa fa-archive" aria-hidden="true"></i><span>Archives</span></div><div class="archives_item"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">2020年01月<span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">2019年12月<span class="archive-list-count">2</span></a></li></ul></div></div></div><div class="card_widget card-webinfo"><div class="card-content"><div class="item_headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>Info</span></div><div class="webinfo"><div class="webinfo_item"><div class="webinfo_article_name">Article :</div><div class="webinfo_article_count">4</div></div><div class="webinfo_item"><div class="webinfo_runtime_name">Run time :</div><div class="webinfo_runtime_count" id="webinfo_runtime_count"></div><script id="runtionshow" src="/js/runtimeshow.js" start_date="6/7/2018 00:00:00">      </script></div><div class="webinfo_item">      <div class="webinfo_site_uv_name">UV :</div><div class="webinfo_site_uv_count" id="busuanzi_value_site_uv"></div></div><div class="webinfo_item"><div class="webinfo_site_name">PV :</div><div class="webinfo_site_pv_count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></div></div><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By StevenAZy</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">简</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
-</script><script>if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {} else {
-  $('.full_page .nav_bg').css('background-attachment', 'fixed');
-}
 
-</script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var typed = new Typed(".subtitle", {
-strings: 'Stay hungry Stay foolish,Never put off till tomorrow what you can do today'.split(","),
-startDelay: 300,
-typeSpeed: 100,
-loop: true,
-backSpeed: 50
-});
-</script><script>//首頁fullpage
-function alignContent() {
-  for (var n = $(window).height(), e = document.querySelectorAll(".full_page"), i = 0; i < e.length; i++) 
-    e[i].style.height = n + "px";
-    $("#site-info").each(function () {
-      var x = $(this).height();
-      $(this).css("top", (n-x)/2)       
-    })
-}
-alignContent();
 
-$(window).bind("resize", function () {
-  alignContent()
-})</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Stay hungry Stay foolish">
+<meta property="og:type" content="website">
+<meta property="og:title" content="StevenAZy">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:site_name" content="StevenAZy">
+<meta property="og:description" content="Stay hungry Stay foolish">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="StevenAZy">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>StevenAZy</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">StevenAZy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="StevenAZy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StevenAZy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">论文阅读（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T17:06:14+08:00">
+                2020-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Reverse-active-learning-based-atrous-DenseNet-for-pathological-image-classification"><a href="#Reverse-active-learning-based-atrous-DenseNet-for-pathological-image-classification" class="headerlink" title="Reverse active learning based atrous DenseNet for pathological image classification"></a>Reverse active learning based atrous DenseNet for pathological image classification</h2><h3 id="Address"><a href="#Address" class="headerlink" title="Address"></a>Address</h3><p><a href="https://doi.org/10.1186/s12859-019-2979-y" target="_blank" rel="noopener">https://doi.org/10.1186/s12859-019-2979-y</a></p>
+<h4 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h4><ol>
+<li>most pathological images have high resolutions</li>
+<li>the number of pathological images are limited</li>
+<li>pathological images only have slice-level label</li>
+</ol>
+<h4 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h4><ol>
+<li>crop patches from the whole-slice pathological images, which can decrease the image size and increase their number</li>
+<li>the slice-level label can be assigned to the associated patches</li>
+</ol>
+<h4 id="Proposed-method"><a href="#Proposed-method" class="headerlink" title="Proposed method"></a>Proposed method</h4><ol>
+<li>Deep Reverse Active Learning(DRAL) aims to remove some mislabeled patches, improving accuracy of classification</li>
+<li>Atrous DenseNet(ADN, atrous(dilated) convolution + DenseNet) aims to classify the pathological images</li>
+</ol>
+<h4 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h4><h5 id="BreAst-Cancer-Histology-dataset-BACH"><a href="#BreAst-Cancer-Histology-dataset-BACH" class="headerlink" title="BreAst Cancer Histology dataset(BACH)"></a>BreAst Cancer Histology dataset(BACH)</h5><ul>
+<li>400 pieces of 2048 $\times$ 1536</li>
+<li>four categories:normal, benign, in situ carcinoma, invasive carcinoma. each category has 100 images</li>
+<li>the dataset is randomly divided with an 80:20 ratio for training and validation</li>
+<li>crop patches with a size of 512 $\times$ 512, each patch is rotated by $90^{\circ}$, $180^{\circ}$, $270^{\circ}$ and then reflected vertically</li>
+</ul>
+<h5 id="Cervical-Carcinoma-Grade-dataset-CCG"><a href="#Cervical-Carcinoma-Grade-dataset-CCG" class="headerlink" title="Cervical Carcinoma Grade dataset(CCG)"></a>Cervical Carcinoma Grade dataset(CCG)</h5><ul>
+<li>20 pieces of 16473 $\times$ 21163</li>
+<li>four grades:normal, cancer-level I, II, III, each category has 5 slices that separated according to a 60:20:20 ration for training, validation and testing</li>
+<li>crop patch with a size of 224 $\times$ 224, each patch is rotated by $90^{\circ}$, $180^{\circ}$, $270^{\circ}$</li>
+</ul>
+<h5 id="UCSB-Breast-Cancer-dataset"><a href="#UCSB-Breast-Cancer-dataset" class="headerlink" title="UCSB Breast Cancer dataset"></a>UCSB Breast Cancer dataset</h5><ul>
+<li>58 pieces of 896 $\times$ 768</li>
+<li>two categories:benign, malignant</li>
+<li>the dataset is divided into training and validation sets according to a 75:25 ratio</li>
+<li>binarize the slices to detect the region of interest(the slices in CCG have large background areas) and then crop patch with a size of 112 $\times$ 112, each patch is rotated by $90^{\circ}$, $180^{\circ}$, $270^{\circ}$ and then reflected vertically</li>
+</ul>
+<h4 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h4><p>RefineNet, a simple CNN, is used to alleviate the overfitting problem</p>
+<h4 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h4><ol>
+<li>Active Learning</li>
+<li>Atrous convolution and Dense Block</li>
+<li>T-test validation and p-value</li>
+<li>F-measure</li>
+<li>Fisher Vector, dense SIFT, patchwise DBN</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/2019%E7%9A%84%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="StevenAZy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StevenAZy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/03/2019%E7%9A%84%E6%80%BB%E7%BB%93/" itemprop="url">2019的总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T20:33:27+08:00">
+                2020-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>对2019的总结本来是想放在元旦写的，但是最近忙着期末考试，今天刚考完一门比较慌的课，准备复习明天的英语的，但是不知道是不是莫名的自信，就是不想复习，就想着好久没有更新博客，就把2019的总结写了吧！<br>其实2019的还有经历了挺多的，先是考研失利，自己也不想调剂，就开始找了工作，后来因为家里的原因，又加上老师的劝导，就填了调剂，然后运气好了一点儿，来到了桂林电子科技大学。<br>确定了有学上之后，就开始肆无忌惮的玩耍，天天跟几个处的好的同学喝酒，打游戏，顺便做做毕设，就这样到了毕业，一群人疯疯癫癫的拍了毕业照，安安静静的经历了分别，没有想象的留下离别的泪水hhhhhhh….<br>在家颓废了两个月，来到了从来没有来过的城市，和爸妈提前来了几天，看了看美丽的桂林山水，然后就报道开学了，开学之后的一个月，我一个江苏人真的是什么都不适应，吃的、用的、住的…想要回家，再想到自己的同学在北上广深的一线城市，拿着12K+的薪水，过着舒适的生活，放弃的念头越来越强，后来自己忍住了。同时，自己也认识了不少志同道合的同学，天天吃喝玩乐，也还行吧！<br>经历了四个月，自己也差不多适应了，虽然因为上课的原因，还没有真正的进入到研究的生活，但是自己还是挺喜欢研究生的生活，要比本科生的时间宽裕，自己能够自主的支配自己的时间，挺好的。<br>2019年就这样过去了，然后在2020的一开始定几个flag吧！</p>
+<ul>
+<li>完善自己的blog。由于搭博客的时候直接用的现成的框架，有很多的功能都是没有的，后面能不断完善吧！</li>
+<li>每天都看一个小时的英语，提高自己的英语读写能力。</li>
+<li>六月份之前能出来一篇论文的初稿吧！（尽量是英文的）</li>
+<li>多多刷LeetCode，提高自己的基础算法能力，同时锻炼代码能力。</li>
+</ul>
+<p>就这样吧！反正，希望新的一年开心快乐！！！！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/17/Latex-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="StevenAZy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StevenAZy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/17/Latex-install/" itemprop="url">Latex_install</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-17T13:15:45+08:00">
+                2019-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前就听人说LaTeX如何如何的好，甩word几条街…。博主不以未然，感觉Word挺不错的，但是在写毕业论文的时候，Word的排版以及公式的书写是真的很糟糕！<br>于是就尝试了一下LaTex，果然没有人能逃过哲学家王竟泽的真香定律。当时只是简单的试用了一下，如今博主换了电脑，决定要配置一些必要的东西，安装LaTex的时候，搜了好多的教程，但是很多的教程写的都比较模糊，不够详细，于是就想自己写一个比较适合新手用的教程。</p>
+<p>首先，先介绍一下什么是LaTeX:</p>
+<blockquote>
+<ol>
+<li>LaTeX是一类用于编辑和排版的软件，用于生成PDF文档。</li>
+<li>LaTeX编辑和排版的核心思想在于，通过\section和\paragraph等语句，规定了每一句话在文章中所从属的层次，从而极大方便了对各个层次批量处理。</li>
+<li>LaTeX在使用体验方面，最不易被Word替代的四个方面：方便美观的数学公式编辑、不会乱动的退格对齐、非所见即所得因此可以在编辑的时候使用退格和换行整理思路但生成的PDF不影响美观、部分导师和刊物不接受Word排版的文章。</li>
+</ol>
+</blockquote>
+<p>总之，在写文章方面，LaTeX要优于Word。</p>
+<p>LaTeX的官网是<a href="https://www.latex-project.org，" target="_blank" rel="noopener">https://www.latex-project.org，</a><br>打开之后是这个样子的。<br><img src="/2019/12/17/Latex-install/web.png" alt="web"><br>点击Get，就可以直接跳转到下载页面，往下拉一下就可以看到如下页面。<br><img src="/2019/12/17/Latex-install/download.png" alt="download"><br>然后根据你的操作系统选择相应的下载链接，博主的系统是Windows10的，所以我就主要提一下Windows下的安装方法。可以看到，Windows下有三个链接MikTex、proTeXt和TexLive，其实这些都是LaTeX的发行版本，主要就是看你自己选择什么了，通过不断的查询资料，博主最终选择的是MikTeX，点击进去之后界面是这样的。<br><img src="/2019/12/17/Latex-install/MikTeX.png" alt="MikTeX"><br>进去之后直接点击Downloads.<br><img src="/2019/12/17/Latex-install/MikTeX_download.png" alt="MikTeX_download"></p>
+<p>直接下载Installer就可以了，速度还是挺快的,这个网址应该没有被墙。<br><img src="/2019/12/17/Latex-install/tmp.png" alt="tmp"></p>
+<p>下载完之后就可以直接安装了，这是个傻瓜安装，中间换一下安装路径就可以了，如果你的C盘足够大的话，你也可以不用换。<br>安装完成之后，开始文件夹中会出现如下的选项,第二个就是用来编辑和排版的编辑器。</p>
+<p><img src="/2019/12/17/Latex-install/start.png" alt="start"></p>
+<p>LaTeX的安装到这儿就先告一段落，后面会专门讲一下如何使用LaTeX的教程。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cnblogs.com/theWinter/p/10277491.html" target="_blank" rel="noopener">https://www.cnblogs.com/theWinter/p/10277491.html</a></p>
+<p><a href="https://blog.csdn.net/rjzcsdn/article/details/88617379" target="_blank" rel="noopener">https://blog.csdn.net/rjzcsdn/article/details/88617379</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/14/my-first-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="StevenAZy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StevenAZy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/14/my-first-blog/" itemprop="url">第一篇博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-14T16:10:38+08:00">
+                2019-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>严格意义上来说，这是我自己的第一篇博客!<br>本科的时候就在CSDN和简书上写过博客，之后自己也想弄一个属于自己的博客，开始自己设计前端，自己写后端，完全当成是一个网站来做，还特地租了一个域名和服务器。<br>最后因为自己的经济原因，服务器和域名都租不起了，也就放弃了。其实，很大的原因还是自己不能做到很好的内容产出，写的东西要么不够原创，要么就是无病呻吟！<br>至于自己为什么又要重新开博客呢？<br>一是想强迫自己能够做出一点儿东西，并把它记录下来；二是自己也进入研究生阶段了，不再是本科的时候，可以肆意的生长，任性的做着事情不顾一切，现在想要记录一下自己做的东西，可以给自己留点儿东西，同时也希望别人能够从自己的工作中获取一点儿东西。<br>自己是一个非典型的理工男，除了想在技术上有所突破，平时也对生活中的一些事情有所感悟和看法，自己又不太想发在微博和朋友圈，所有发在自己的博客，可能看到的人就不是很多，或者说看我博客的也会是跟我志同道合的吧！<br>作为第一篇博客，先立一个flag吧！首先，自己也不希望这个成为一个僵尸站，所以我会尽量一周更2到3篇；其次，就是宁缺勿滥，不希望因为数量拉低自己的质量。还有就是，本博客的定位是技术或科研博客，我会让70%的博文都在科研和IT技术上，剩下的就会是自己的随笔和一些无病呻吟的感慨，希望大家可以接受！<br>不接受你也没有办法！！！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">StevenAZy</p>
+              <p class="site-description motion-element" itemprop="description">Stay hungry Stay foolish</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">StevenAZy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
